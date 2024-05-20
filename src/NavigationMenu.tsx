@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavigationMenu.css";
 import { MenuItem } from "./types/NavType";
 import { menuItems } from "./mock/data";
