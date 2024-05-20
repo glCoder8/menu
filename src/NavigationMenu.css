@@ -11,10 +11,12 @@
 
 .menu li {
   position: relative;
+  cursor: pointer;
 }
 
 .menu li a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
   text-decoration: none;
   color: #333;
@@ -29,6 +31,10 @@
   background-color: #ccc;
 }
 
+.menu li a .icon {
+  margin-right: 5px;
+}
+
 .submenu {
   position: absolute;
   top: 100%;
@@ -40,10 +46,15 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  border-top: 2px solid #ccc;
 }
 
 .menu li:hover > .submenu {
   display: block;
+}
+
+.submenu li {
+  position: relative;
 }
 
 .submenu li a {
@@ -52,6 +63,25 @@
   color: #333;
 }
 
-.submenu li a:hover {
+.submenu li:hover > .submenu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 160px;
+  background-color: #f1f1f1;
+}
+
+.submenu li:hover > .submenu li {
+  position: relative;
+}
+
+.submenu li:hover > .submenu li a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.submenu li:hover > .submenu li a:hover {
   background-color: #ddd;
 }
