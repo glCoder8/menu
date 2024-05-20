@@ -11,11 +11,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationMenu: React.FC = () => {
-  const renderSubmenu = (submenuItems: MenuItem[], isSecondLevel = false) => {
-    const submenuClass = isSecondLevel ? "submenu" : "submenu";
-
+  const renderSubmenu = (submenuItems: MenuItem[]) => {
     return (
-      <ul className={submenuClass}>
+      <ul className="submenu">
         {submenuItems.map((item) => (
           <li key={`${item.label}-${item.id}`}>
             <a href={item.link}>
@@ -24,7 +22,7 @@ const NavigationMenu: React.FC = () => {
                 <FontAwesomeIcon icon={faCaretRight} className="submenu-icon" />
               )}
             </a>
-            {item.submenu && renderSubmenu(item.submenu, true)}
+            {item.submenu && renderSubmenu(item.submenu)}
           </li>
         ))}
       </ul>
